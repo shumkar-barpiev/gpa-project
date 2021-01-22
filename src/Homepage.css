@@ -1,0 +1,47 @@
+.slidediv{
+  width: 70%;
+  margin-left:15%; margin-right:15%;
+  height: 400px;
+  background-image: url('./background-image/photo1.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 1px 2px 10px 5px white;
+  margin-top: 50px;
+  animation: slider 15s infinite ease-in;
+  }
+  @keyframes slider {
+    0% {background-image: url('./background-image/photo1.jpg'); background-size: 100% 100%; }
+    50% {background-image: url('./background-image/photo2.jpg'); background-size: 100% 100%; }
+    100% {background-image: url('./background-image/photo3.jpg'); background-size: 100% 100%;}
+
+  }
+
+h2{
+  margin-bottom: 45px; font-family: Courier New; color: white;margin-top: 55px; text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border: 1px solid black;
+  display: table;
+  text-align:center;
+}
+.column{
+  border-bottom: 1px solid black;
+  font-weight:bold;
+  font-size: 15px;
+  height:35px;
+  color:	#00001a;
+  background-color: #e6ffff;
+}
+.row{
+  color:white;
+font-size: 25px;
+font-weight: bold;
+display: table-cell;
+height:35px;
+padding: 25px;
+background-color: gray;
+font-family: Courier New;
+}

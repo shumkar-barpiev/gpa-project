@@ -1,0 +1,63 @@
+.App-main {
+  padding-bottom:150px;
+}
+.App{
+  color: white;
+  background-color: rgba(27,31,38);
+}
+.App-footer{
+  text-align: center;
+  padding: 15px;
+}
+
+.App-Head {
+  text-align:center; font-family: Courier New;color:	#00001a; padding-top: 20px;font-size: calc(45+2vmin);
+}
+.App-image1 {
+  width: 70px; height: 70px; float: left; margin-top: 15px; margin-left: 22px;
+}
+.App-image2 {
+  width: 70px; height: 70px; float: right; margin-top: 15px; margin-right: 22px;
+}
+.App-icon{
+  width: 20px; height: 20px;
+  background-color: white;
+  padding: 2.5px;
+  margin-right: 10px;
+}
+.App-header {
+  height: 120px;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  background-color: gray;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav li {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  list-style: none;
+  font-family: verdana;
+}
+
+.topnav li:hover {
+  background-color:#4CAF50;
+  color: white;
+}
+.Getstartpage{
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top:50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
