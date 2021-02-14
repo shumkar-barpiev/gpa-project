@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import './Calculate.css';
 
-
 var list1= [];
 var list2= [];
 var list3= [];
@@ -19,13 +18,11 @@ function Calculate() {
   const [averagestate, setAverageState] = useState(null)
 
     return (
-      <div>
-        <div className="left"></div>
-            <div className="middle">
+      <div className="form">
+        <form>
+            <ul className="form-container">
                   <div className="inputdiv">
-                        <div className="tdhead">
-                        course
-                        </div>
+                        <div className="tdhead"> course </div>
                         <div className="thead">
                         <input  className='inp'   type='text'   name='age'    placeholder='e.g. Course1'          onChange={ (event) => {
           			            coursename=event.target.value;
@@ -67,90 +64,86 @@ function Calculate() {
                 		          <option name='grade' value="0">FF</option>
                 		        </select>
                         </div>
+                </div>
+                <div className="space">
+                    <button type= 'button' id='add-btn' name="add-btn" className="button secondary text center" onClick={ (event) => {
+                if(coursenamestate!=="" && gradestate !==null && creditstate!== null ){
+                          if(isNaN(creditstate)){
+                            alert(" Credits must be a number!!!")
+                          }
 
+                          else{
+                              var AddRow = document.getElementById('show');
+                              var NewRow = AddRow.insertRow(n);
 
-                      <button type= 'button' id='add-btn' name="add-btn" className="btn" onClick={ (event) => {
-                  if(coursenamestate!=="" && gradestate !==null && creditstate!== null ){
-                            if(isNaN(creditstate)){
-                              alert(" Credits must be a number!!!")
+                              list1[x]=n;
+                              list2[x]=coursenamestate;
+                              list5[x]=parseFloat(gradestate);
+
+                              switch (list5[x]) {
+                                  case 4:     list3[x] = "AA";      break;
+                                  case 3.5:   list3[x] = "BA";      break;
+                                  case 3:     list3[x] = "BB";      break;
+                                  case 2.5:   list3[x] = "CB";      break;
+                                  case 2:     list3[x] = "CC";      break;
+                                  case 1.5:   list3[x] = "DC";      break;
+                                  case 1:     list3[x] = "DD";      break;
+                                  case 0.5:   list3[x] = "FD";      break;
+                                  case 0:     list3[x] = "FF";      break;
+                                  default:    list3[x] = "None";       break;
+                                }
+                              list4[x]=parseInt(creditstate);
+
+                              var cel1 = NewRow.insertCell(0);
+                              var cel2 = NewRow.insertCell(1);
+                              var cel3 = NewRow.insertCell(2);
+                              var cel4 = NewRow.insertCell(3);
+
+                              cel1.innerHTML = list1[x];
+                              cel2.innerHTML = list2[x];
+                              cel3.innerHTML = list3[x];
+                              cel4.innerHTML = list4[x];
+
+                              n++;
+                              x++;
                             }
+                      }
+                else{
+                  alert("No information!!!")
+                }
+                }
+              }>add</button>
 
-                            else{
-                                var AddRow = document.getElementById('show');
-                                var NewRow = AddRow.insertRow(n);
+                    <button type='button' id='calculate-btn' className="button secondary text center" name="add-btn"   onClick={ (event) => {
+                      if(list1.length !== 0 && list2.length !== 0 && list3.length !== 0 && list4.length !== 0){
+                        if(Boolean(check)){
 
-                                list1[x]=n;
-                                list2[x]=coursenamestate;
-                                list5[x]=parseFloat(gradestate);
-
-                                switch (list5[x]) {
-                                    case 4:     list3[x] = "AA";      break;
-                                    case 3.5:   list3[x] = "BA";      break;
-                                    case 3:     list3[x] = "BB";      break;
-                                    case 2.5:   list3[x] = "CB";      break;
-                                    case 2:     list3[x] = "CC";      break;
-                                    case 1.5:   list3[x] = "DC";      break;
-                                    case 1:     list3[x] = "DD";      break;
-                                    case 0.5:   list3[x] = "FD";      break;
-                                    case 0:     list3[x] = "FF";      break;
-                                    default:    list3[x] = "None";       break;
+                                var i,j;
+                                  for (i = 0; i < list4.length; i++) {
+                                    total_credits += list4[i];
                                   }
-                                list4[x]=parseInt(creditstate);
-
-                                var cel1 = NewRow.insertCell(0);
-                                var cel2 = NewRow.insertCell(1);
-                                var cel3 = NewRow.insertCell(2);
-                                var cel4 = NewRow.insertCell(3);
-
-                                cel1.innerHTML = list1[x];
-                                cel2.innerHTML = list2[x];
-                                cel3.innerHTML = list3[x];
-                                cel4.innerHTML = list4[x];
-
-                                n++;
-                                x++;
-                              }
+                                  for (j = 0; j < list4.length; j++) {
+                                    temp=list4[j]*list5[j];
+                                    total_rates += temp;
+                                    temp=0;
+                                  }
+                                  avrg=total_rates/total_credits;
+                                  var res=avrg.toPrecision(3);
+                                setAverageState(res);
+                                check=0;
+                                }
+                                else{
+                                  alert("Please, clear the informations!")
+                                }
                         }
                   else{
                     alert("No information!!!")
                   }
-                  }
-                }>add</button>
-
-                <button type='button' id='calculate-btn' className="btn" name="add-btn"   onClick={ (event) => {
-                  if(list1.length !== 0 && list2.length !== 0 && list3.length !== 0 && list4.length !== 0){
-                    if(Boolean(check)){
-
-                            var i,j;
-                              for (i = 0; i < list4.length; i++) {
-                                total_credits += list4[i];
-                              }
-                              for (j = 0; j < list4.length; j++) {
-                                temp=list4[j]*list5[j];
-                                total_rates += temp;
-                                temp=0;
-                              }
-                              avrg=total_rates/total_credits;
-                            setAverageState(avrg)
-                            check=0;
-                            }
-                            else{
-                              alert("Please, clear the informations!")
-                            }
                     }
-              else{
-                alert("No information!!!")
-              }
-                }
-              } >Calculate</button>
+                  } >Calculate</button>
 
-                <button type= 'button' className='btn' id='clear-btn' name="clear-btn"  onClick={() => window.location.reload(false) }>Clear !</button>
-                <p>Total credits are :  {total_credits}</p>
-                <p>Your current GPA  is :  {averagestate}</p>
-
-
-                  </div>
-
+                    <button type= 'button' className=' button secondary text center' id='clear-btn' name="clear-btn"  onClick={() => window.location.reload(false) }>Clear !</button>
+                </div>
                   <div>
                     <table className="tbl-inputs"id='show'>
                        <tr>
@@ -161,9 +154,12 @@ function Calculate() {
                        </tr>
                     </table>
                   </div>
-
-            </div>
-        <div className="right"></div>
+                  <div className="result">
+                      <p><b>Total credits are : {total_credits}</b></p>
+                      <p ><b>Your current GPA  is : {averagestate}</b></p>
+                  </div>
+              </ul>
+        </form>
       </div>
     );
 }
