@@ -1,22 +1,4 @@
-.left{
-  width: 25%;
-  float: left;
-  height: 600px;
-}
-.middle{
-  margin-top: 30px;
-  margin-bottom: 50px;
-  padding: 10px;
-  width: 50%;
-  float: left;
-}
-.right{
-  width: 25%;
-  float: left;
-  height: 850px;
-}
 .inputdiv{
-  margin: auto;
   width: 80%;
   margin-left:10%; margin-right:10%;
 }
@@ -45,7 +27,7 @@
   font-weight:bold;
 }
 .gradeselect{
-  height:27px;
+  height:24px;
   width: 100%;
   border-radius: 5px;
 }
@@ -54,15 +36,16 @@
   text-align: center;
   border-radius: 5px;
 }
-
-.btn{
-  margin-top: 20px;
-margin-left: 15px;
-border: none;
-color: white;
-border-radius: 5px;
-cursor: pointer;
+.result{
+  font-family: Courier New;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: #c0c0c0;
+  color: #00001a;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
 }
+
 #add-btn{
   background-color: blue;
 }
@@ -76,10 +59,10 @@ cursor: pointer;
 
 
 .tbl-inputs{
-  margin-top: 50px;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
   border: 1px solid black;
   display: table;
   text-align:center;
