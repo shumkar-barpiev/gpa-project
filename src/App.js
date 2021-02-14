@@ -34,7 +34,7 @@ function App() {
             Fax: +996 (312) 54 19 35</div>
        </div>
       <div className="App-footer">
-      &copy; Shumkar Barpyev
+      &copy; All rights reserved
   <p>e-mail: barpievsh@gmail.com</p>
       </div>
     </div>
