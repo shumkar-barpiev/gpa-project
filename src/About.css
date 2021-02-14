@@ -10,4 +10,7 @@ h4{
   font-size: 20px;
   font-family: Arial;
 }
+#inlineFrameExample{
+  width:50%; margin-left:25%; margin-right:25%;
+}
 
